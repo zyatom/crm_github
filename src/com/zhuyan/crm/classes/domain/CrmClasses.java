@@ -46,12 +46,6 @@ public class CrmClasses {
 	public void setClassId(String classId) {
 		this.classId = classId;
 	}
-	public String getCourseTypeId() {
-		return courseTypeId;
-	}
-	public void setCourseTypeId(String courseTypeId) {
-		this.courseTypeId = courseTypeId;
-	}
 	public String getName() {
 		return name;
 	}
