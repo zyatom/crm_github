@@ -7,14 +7,9 @@
 		<id name="classId">
 			<generator class="uuid"></generator>
 		</id>
-		<property name="courseCost"></property>
 		<property name="name"></property>
-		<property name="beginTime">
-			<column name="beginTime" sql-type="datetime"></column>
-		</property>
-		<property name="endTime">
-			<column name="endTime" sql-type="datetime"></column>
-		</property>
+		<property name="beginTime" type="date"></property>
+		<property name="endTime"  type="date"></property>
 		<property name="status"></property>
 		<property name="totalCount"></property>
 		<property name="upgradeCount"></property>
