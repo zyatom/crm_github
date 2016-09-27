@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project-module
   type="WEB"
-  name="crm"
+  name="crm_github"
   id="myeclipse.1474633988153"
   context-root="/crm"
   j2ee-spec="5.0"
-  archive="crm.war">
+  archive="crm_github.war">
   <attributes>
     <attribute name="webrootdir" value="WebRoot" />
   </attributes>
