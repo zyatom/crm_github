@@ -1,5 +1,7 @@
 package com.zhuyan.crm.staff.web.action;
 
+import java.util.List;
+
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
@@ -30,5 +32,10 @@ public class StaffAction extends ActionSupport implements ModelDriven<CrmStaff> 
 	}
 	public String home(){
 		return "home";
+	}
+	public String findAll(){
+		List<CrmStaff> allStaff=this.staffService.findAll();
+		ActionContext.getContext().put("allStaff", allStaff);
+		return "findAll";
 	}
 }

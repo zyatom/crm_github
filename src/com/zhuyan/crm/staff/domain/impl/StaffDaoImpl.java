@@ -17,4 +17,9 @@ public class StaffDaoImpl extends HibernateDaoSupport implements StaffDao {
 		return null;
 	}
 
+	public List<CrmStaff> findAll() {
+		List<CrmStaff> allStaff=this.getHibernateTemplate().find("from CrmStaff");
+		return allStaff;
+	}
+
 }
