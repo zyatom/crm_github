@@ -17,8 +17,9 @@
     			</interceptor-ref>
     		</interceptor-stack>
     	</interceptors>
-    	
+    	<!--
     	<default-interceptor-ref name="loginStack"></default-interceptor-ref>
+    	  -->
     	<global-results>
     		<result name="login">WEB-INF/pages/login.jsp</result>
     	</global-results>
@@ -27,4 +28,5 @@
     	</action>
     </package>
     <include file="struts/struts-staff.xml"></include>
+     <include file="struts/struts-post.xml"></include>
 </struts>

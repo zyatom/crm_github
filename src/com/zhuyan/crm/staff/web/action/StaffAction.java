@@ -5,6 +5,8 @@ import java.util.List;
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
+import com.zhuyan.crm.department.domain.CrmDepartment;
+import com.zhuyan.crm.department.service.DepartmentService;
 import com.zhuyan.crm.staff.domain.CrmStaff;
 import com.zhuyan.crm.staff.service.StaffService;
 
@@ -19,6 +21,11 @@ public class StaffAction extends ActionSupport implements ModelDriven<CrmStaff> 
 	private StaffService staffService;
 	public void setStaffService(StaffService staffService) {
 		this.staffService = staffService;
+	}
+	
+	private DepartmentService departmentService;
+	public void setDepartmentService(DepartmentService departmentService) {
+		this.departmentService = departmentService;
 	}
 	
 	public String login(){
@@ -38,4 +45,14 @@ public class StaffAction extends ActionSupport implements ModelDriven<CrmStaff> 
 		ActionContext.getContext().put("allStaff", allStaff);
 		return "findAll";
 	}
+	
+	public String editUI(){
+		CrmStaff findStaff = this.staffService.findById(staff.getStaffId());
+		ActionContext.getContext().getValueStack().push(findStaff);
+		List<CrmDepartment> allDepartment = departmentService.findAll();
+		ActionContext.getContext().getValueStack().set("allDepartment",allDepartment);
+		
+		return "editUI";
+	}
+	
 }
