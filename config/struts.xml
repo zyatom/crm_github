@@ -28,5 +28,6 @@
     	</action>
     </package>
     <include file="struts/struts-staff.xml"></include>
-     <include file="struts/struts-post.xml"></include>
+    <include file="struts/struts-post.xml"></include>
+    <include file="struts/struts-coursetype.xml"></include>
 </struts>

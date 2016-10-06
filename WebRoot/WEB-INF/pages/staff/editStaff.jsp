@@ -34,9 +34,8 @@
   </tr>
 </table>
 
-<s:form>
-	
-	
+<s:form namespace="/" action="staffAction_edit">
+	<s:hidden name="staffId" value="%{staffId}"></s:hidden>
 	<table width="88%" border="0" class="emp_table" style="width:80%;">
 	 <tr>
 	    <td>登录名：</td>
@@ -64,7 +63,7 @@
 	    <td width="62%">
 			<s:select list="post != null ? post.department.postSet : {}" name="post.postId"
 				listKey="postId" listValue="postName"
-				headerKey="" headerValue="----请--选--择----"
+				headerKey="" headerValue="----请--选--择----" id="postSelectId"
 			></s:select>
 	    </td>
 	  </tr>

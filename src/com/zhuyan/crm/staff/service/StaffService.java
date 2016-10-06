@@ -8,4 +8,5 @@ public interface StaffService {
 	public CrmStaff login(CrmStaff staff);
 	public List<CrmStaff> findAll();
 	public CrmStaff findById(String staffId);
+	public void updateStaff(CrmStaff staff);
 }
