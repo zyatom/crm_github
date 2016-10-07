@@ -20,6 +20,36 @@ public class CrmCourseType {
 	private Integer total;
 	private String courseName;
 	private String remark;
+	
+	private String totalStart;
+	private String totalEnd;
+	private String courseCostStart;
+	private String courseCostEnd;
+	public String getTotalStart() {
+		return totalStart;
+	}
+	public void setTotalStart(String totalStart) {
+		this.totalStart = totalStart;
+	}
+	public String getTotalEnd() {
+		return totalEnd;
+	}
+	public void setTotalEnd(String totalEnd) {
+		this.totalEnd = totalEnd;
+	}
+	public String getCourseCostStart() {
+		return courseCostStart;
+	}
+	public void setCourseCostStart(String courseCostStart) {
+		this.courseCostStart = courseCostStart;
+	}
+	public String getCourseCostEnd() {
+		return courseCostEnd;
+	}
+	public void setCourseCostEnd(String courseCostEnd) {
+		this.courseCostEnd = courseCostEnd;
+	}
+
 	//一对多
 	private Set<CrmClasses> classesSet=new HashSet<CrmClasses>();
 	public String getCourseTypeId() {
