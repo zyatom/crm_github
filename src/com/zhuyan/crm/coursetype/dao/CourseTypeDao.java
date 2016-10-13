@@ -11,4 +11,9 @@ public interface CourseTypeDao {
 	
 	public CrmCourseType findById(String courseTypeId);
 	public void saveOrEdit(CrmCourseType courseType);
+
+	public int getTotalRecord(String condition, Object[] params);
+
+	public List<CrmCourseType> findAll(String condition, Object[] params,
+			int startIndex, int pageSize);
 }

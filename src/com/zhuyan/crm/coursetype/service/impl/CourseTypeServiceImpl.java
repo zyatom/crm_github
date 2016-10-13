@@ -8,6 +8,7 @@ import org.apache.commons.lang3.StringUtils;
 import com.zhuyan.crm.coursetype.dao.CourseTypeDao;
 import com.zhuyan.crm.coursetype.domain.CrmCourseType;
 import com.zhuyan.crm.coursetype.service.CourseTypeService;
+import com.zhuyan.crm.page.PageBean;
 
 public class CourseTypeServiceImpl implements CourseTypeService {
 	private CourseTypeDao courseTypeDao;
@@ -56,6 +57,20 @@ public class CourseTypeServiceImpl implements CourseTypeService {
 	public void addOrUpdate(CrmCourseType courseType) {
 		courseTypeDao.saveOrEdit(courseType);
 		
+	}
+	public PageBean<CrmCourseType> findAll(CrmCourseType courseType, int pageNum,
+			int pageSize) {
+		String condition = "";
+		Object[] params = {};
+		
+		int totalRecord=this.courseTypeDao.getTotalRecord(condition,params);
+		
+		PageBean<CrmCourseType> pageBean=new PageBean<CrmCourseType>(pageNum, pageSize, totalRecord);
+		
+		List<CrmCourseType> data=this.courseTypeDao.findAll(condition,params,pageBean.getStartIndex(),pageBean.getPageSize());
+		pageBean.setData(data);
+		
+		return pageBean;
 	}
 
 }
